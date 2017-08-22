@@ -26,7 +26,7 @@ class Menu extends Component {
     componentWillMount() {
         this.setState({interval: setInterval(() => {
             this.setState({position: this.state.position === 2 ? 0 : this.state.position + 1});
-        }, 2000)});
+        }, 1000)});
     }
 
     componentWillUnmount() {
