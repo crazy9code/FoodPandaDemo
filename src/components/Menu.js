@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text,
   ListView,
   StyleSheet
 } from 'react-native';
 import {
-  CardView,
   Header,
   MenuRow,
-  CardSection
 } from './common';
 import ImageSlider from 'react-native-image-slider';
 
@@ -33,11 +30,6 @@ class Menu extends Component {
         clearInterval(this.state.interval);
     }
 
-    // renderRowData() {
-    //   return(
-    //     <MenuRow />
-    //   );
-    // }
     render() {
       return(
         <View style={{backgroundColor: '#f2f2f2'}}>
@@ -45,15 +37,16 @@ class Menu extends Component {
             Menu
           </Header>
           <ImageSlider
-                    images={[
-                        require('../images/Head_Image.png'),
-                        require('../images/Head_Image.png'),
-                        require('../images/Head_Image.png'),
-                        require('../images/Head_Image.png'),
-                        require('../images/Head_Image.png'),
-                    ]}
-                    position={this.state.position}
-                    onPositionChanged={position => this.setState({position})}/>
+            images={[
+                require('../images/Head_Image.png'),
+                require('../images/Head_Image.png'),
+                require('../images/Head_Image.png'),
+                require('../images/Head_Image.png'),
+                require('../images/Head_Image.png'),
+            ]}
+            position={this.state.position}
+            onPositionChanged={position => this.setState({position})}
+            />
             <View
             style={styles.container}>
             <ListView
@@ -69,7 +62,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     marginTop: 30,
-    marginHorizontal: 30
+    marginHorizontal: 15
   }
 });
 

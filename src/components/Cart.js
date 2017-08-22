@@ -4,9 +4,9 @@ import {
   Text,
   StyleSheet,
   Image,
+  TouchableWithoutFeedback
 } from 'react-native';
 import {
-  CardView,
   Header,
   CardSection
 } from './common';
@@ -14,7 +14,20 @@ import {
 class Cart extends Component {
     constructor() {
       super();
+      this.state = {
+        value: 1,
+      };
     }
+
+    onMinus() {
+      if (this.state.value > 0) {
+        this.setState({ value: this.state.value - 1 });
+      }
+    }
+    onPlus() {
+      this.setState({ value: this.state.value + 1 });
+    }
+
     renderCard() {
       return(
         <CardSection>
@@ -33,17 +46,21 @@ class Cart extends Component {
             style={{flexDirection: 'row', marginLeft: 20,
               justifyContent:'center', alignItems:'center'}}>
             <Text style={{fontSize: 12}}>$2.99</Text>
-            <Image
-              style={{marginHorizontal:10,width:20,height:20}}
-              source={require('../images/minus.png')}
-              resizeMode="contain"
-            />
-            <Text>1</Text>
-            <Image
-              style={{marginLeft:10,width:20,height:20}}
-              source={require('../images/minus.png')}
-              resizeMode="stretch"
-            />
+            <TouchableWithoutFeedback onPress={() => this.onMinus()}>
+              <Image
+                style={{marginHorizontal:10,width:20,height:20}}
+                source={require('../images/minus.png')}
+                resizeMode="contain"
+              />
+            </TouchableWithoutFeedback>
+            <Text>{this.state.value}</Text>
+            <TouchableWithoutFeedback onPress={() => this.onPlus()}>
+              <Image
+                style={{marginLeft:10,width:20,height:20}}
+                source={require('../images/round-add-button.png')}
+                resizeMode="stretch"
+              />
+            </TouchableWithoutFeedback>
           </View>
         </CardSection>
       );

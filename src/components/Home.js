@@ -18,14 +18,8 @@ class Home extends Component {
     render() {
       return(
           <Image
-           style={{
-              flex: 1,
-              alignSelf: 'stretch',
-              width: undefined,
-              height: undefined
-            }}
-            source={require('../images/landing-page.png')}
-          >
+           style={styles.imageStyle}
+            source={require('../images/landing-page.png')}>
             <View style={styles.container}>
               <Text style={styles.text1}>Food</Text>
               <Text style={styles.text2}>Panda</Text>
@@ -66,8 +60,10 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   imageStyle: {
-    // justifyContent: 'center',
-    // alignItems: 'center',
+    flex: 1,
+    alignSelf: 'stretch',
+    width: undefined,
+    height: undefined
   },
 });
 export default Home;

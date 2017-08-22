@@ -23,7 +23,7 @@ class MenuRow extends Component {
         <Text style={styles.type}>American Cafe</Text>
         <View style={styles.rowView}>
           <Text style={styles.text}>Open now</Text>
-          <Text style={styles.text}>4.7</Text>
+          <Text style={[styles.text, {marginLeft: 220}]}>4.7</Text>
         </View>
       </View>
     );
